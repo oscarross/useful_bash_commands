@@ -115,6 +115,23 @@ List the five most recently modified files
 
 `export [name]=[value] #later on you can assess it by using $name`
 
+# Last parameter - $_ vs !$
+
+`$_` is substitued by the shell with the parameter from the last command
+
+```
+git branch -d branch-name
+git push --delete remote-name $_
+```
+
+When hitting enter on a command with `$!` the shell will not execute it, but prompt the command again, with the last parameter used in place of `!$`
+
+```
+$ ls ~/Desktop
+$ ls -a !$
+$ ls -a ~/Desktop
+```
+
 # Fix typo
 
 ```
